@@ -2,7 +2,7 @@
 
 A premium portfolio showcasing expertise in Full-Stack Development, AI Architectures, and Interactive 3D Web Experiences.
 
-![Portfolio Preview](public/images/og/home.jpg)
+![Portfolio Preview](public/images/og/main-mockup.png)
 
 ## 🚀 Technical Stack
 
@@ -17,7 +17,7 @@ A premium portfolio showcasing expertise in Full-Stack Development, AI Architect
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/mahenoorsalat/portfolio.git
+git clone https://github.com/mahenoorsalat/salat-mahenoor-ai-creative-developer.git
 ```
 
 **2. Install dependencies**

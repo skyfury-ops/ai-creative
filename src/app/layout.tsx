@@ -94,6 +94,7 @@ export default async function RootLayout({
       <head>
         <link rel="icon" href="/images/avatar.jpg" />
         <link rel="apple-touch-icon" href="/images/avatar.jpg" />
+        <meta name="google-site-verification" content="cMnZb7DD-LViMD84Lb68pko6L9heuvK-bCiTL7ET8Dk" />
         <StructuredData data={structuredData} />
         <script
           id="theme-init"

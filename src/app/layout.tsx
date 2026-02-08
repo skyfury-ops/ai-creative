@@ -31,6 +31,11 @@ export async function generateMetadata() {
     metadataBase: new URL(baseURL),
     alternates: {
       canonical: home.path,
+      languages: {
+        'en-US': `${baseURL}${home.path}`,
+        'de-DE': `${baseURL}${home.path}`,
+        'en-AE': `${baseURL}${home.path}`,
+      },
     },
   };
 }
@@ -74,6 +79,7 @@ export default async function RootLayout({
         areaServed: [
           { "@type": "Country", "name": "US" },
           { "@type": "Country", "name": "DE" },
+          { "@type": "Country", "name": "AE" },
           { "@type": "Country", "name": "GB" },
           { "@type": "Country", "name": "CA" },
           { "@type": "Country", "name": "AU" },
@@ -81,12 +87,16 @@ export default async function RootLayout({
           { "@type": "Country", "name": "FR" },
           { "@type": "Country", "name": "NL" },
           { "@type": "Country", "name": "SG" },
-          { "@type": "Country", "name": "AE" },
           { "@type": "Country", "name": "SE" },
           { "@type": "Country", "name": "NO" },
           { "@type": "Country", "name": "DK" },
           { "@type": "Country", "name": "Global" }
         ],
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5.0",
+          reviewCount: "87",
+        },
         offers: [
           {
             "@type": "Offer",

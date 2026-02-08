@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Column, Row, IconButton, Text, Flex, Heading, SmartLink } from "@once-ui-system/core";
+import { baseURL } from "@/resources";
 
 interface VideoSliderClientProps {
     videoProjects: any[];
@@ -26,9 +27,26 @@ export const VideoSliderClient: React.FC<VideoSliderClientProps> = ({ videoProje
     if (videoProjects.length === 0) return null;
 
     const currentProject = videoProjects[activeIndex];
+    const poster = currentProject.metadata.images?.[0] || "";
+    const posterUrl = poster.startsWith("/") ? `${baseURL}${poster}` : poster;
+    const videoUrl = currentProject.metadata.video.startsWith("/") ? `${baseURL}${currentProject.metadata.video}` : currentProject.metadata.video;
 
     return (
         <Column fillWidth gap="m" paddingX="l">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "VideoObject",
+                        name: currentProject.metadata.title,
+                        description: currentProject.metadata.summary,
+                        thumbnailUrl: [posterUrl],
+                        uploadDate: new Date(currentProject.metadata.publishedAt).toISOString(),
+                        contentUrl: videoUrl,
+                    })
+                }}
+            />
             <Flex
                 position="relative"
                 fillWidth
@@ -41,6 +59,7 @@ export const VideoSliderClient: React.FC<VideoSliderClientProps> = ({ videoProje
                 <video
                     key={currentProject.metadata.video}
                     src={currentProject.metadata.video}
+                    poster={poster}
                     title={currentProject.metadata.title}
                     style={{
                         width: "100%",

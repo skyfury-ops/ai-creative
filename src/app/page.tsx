@@ -124,7 +124,7 @@ export default function Home() {
             </RevealFx>
           )}
           <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l">
+            <Heading as="h1" wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
           </RevealFx>

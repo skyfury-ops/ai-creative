@@ -1,4 +1,4 @@
-import { Column, Meta, Schema } from "@once-ui-system/core";
+import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
 import TestimonialsView from "@/components/testimonials/TestimonialsView";
 import { StructuredData } from "@/components";
 import { baseURL, testimonials, person, home, about } from "@/resources";
@@ -97,6 +97,9 @@ export default function Testimonials() {
           ],
         }}
       />
+      <Heading as="h1" marginBottom="l" variant="heading-strong-xl" align="center">
+        {testimonials.title}
+      </Heading>
       <TestimonialsView />
     </Column>
   );

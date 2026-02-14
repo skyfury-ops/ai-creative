@@ -59,7 +59,7 @@ export default function Blog() {
           ],
         }}
       />
-      <Heading marginBottom="l" variant="heading-strong-xl" marginLeft="24">
+      <Heading as="h1" marginBottom="l" variant="heading-strong-xl" marginLeft="24">
         {blog.title}
       </Heading>
       <Column fillWidth flex={1} gap="40">
